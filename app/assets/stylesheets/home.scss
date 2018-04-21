@@ -6,12 +6,26 @@ body
     font-family: 'Open Sans', sans-serif;
     margin: 0 auto;
     background-color:#f3f3f3;
+    padding: 0;
 }
 
 
 section {
     margin: 0 auto;
-    max-width: 50em;
+    max-width: 70em;
     background-color: blue;
 }
+
+#map {
+    background-color: green;
+    margin: 0 auto;
+}
+
+#listing {
+    width: 80%;
+    background-color: red;
+    margin: 0 auto;
+}
+
+
 
