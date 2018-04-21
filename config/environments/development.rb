@@ -50,7 +50,7 @@ Rails.application.configure do
   config.assets.debug = true
 
   #code added from pokemon project for devise
-  # ActionMailer Config
+  #ActionMailer Config
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.raise_delivery_errors = true
