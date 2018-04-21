@@ -1,0 +1,16 @@
+<div id="listing">
+    <h1> <%= @listing.address %> </h1>
+    <h3> <%= @listing.price %> </h3>
+    <h3> <%= @listing.term %> </h3>
+    <h3> <%= @listing.bedroom %> </h3>
+    <h3> <%= @listing.bathroom %> </h3>
+    <h3> <%= @listing.poster %> </h3>
+    <h3> <%= @listing.bedrooms %> </h3>
+    <h3> <%= @listing.bedrooms %> </h3>
+    <td> <%= link_to "Show More", controller: "listings", action: "show", id: @listing %> 
+</td>
+    
+                <h4>End Date</h4>
+                <h3>x Favorites</h3>
+                <button>Favorite!</button>
+</div>
