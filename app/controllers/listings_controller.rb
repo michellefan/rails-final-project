@@ -10,6 +10,10 @@ class ListingsController < ApplicationController
   # GET /listings/1
   # GET /listings/1.json
   def show
+      listing = Listing.where(id=params[:id])
+      @listing = listing.first
+      puts 'ID OF LISTING: '
+       puts params[:id]
   end
 
   # GET /listings/new
