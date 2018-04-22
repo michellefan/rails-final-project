@@ -5,6 +5,11 @@ class ListingsController < ApplicationController
   # GET /listings.json
   def index
     @listings = Listing.all
+    @hash = Gmaps4rails.build_markers(@listings) do |listing, marker|
+      marker.lat listing.latitude
+      marker.lng listing.longitude
+      marker.infowindow user.description
+    end
   end
 
   # GET /listings/1
@@ -63,6 +68,10 @@ class ListingsController < ApplicationController
       format.html { redirect_to listings_url, notice: 'Listing was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def address
+    return Listing.find(params[:id]).address
   end
 
   private
