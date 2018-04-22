@@ -7,12 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Make users
-%w(Michelle Adhiv Tina).each do |name|
-  User.create first_name: name, email: name+"@berkeley.edu", encrypted_password: 'password'
-end
-
-User.create(first_name: 'Michelle', email: "tina@berkeley.edu", encrypted_password: 'password')
-User.create(first_name: 'Tina', email: "michelle@berkeley.edu", encrypted_password: 'password')
+#%w(Michelle Adhiv Tina).each do |name|
+#  User.create first_name: name, email: name+"@berkeley.edu", encrypted_password: 'password'
+#end
+#
+#User.create(first_name: 'Michelle', email: "tina@berkeley.edu", encrypted_password: 'password')
+#User.create(first_name: 'Tina', email: "michelle@berkeley.edu", encrypted_password: 'password')
 
 #Make listings
 [
