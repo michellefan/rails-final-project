@@ -27,7 +27,7 @@ class FavoritesController < ApplicationController
     @favorite = Favorite.new(favorite_params)
     respond_to do |format|
       if @favorite.save
-        format.html { redirect_to @favorite, notice: 'Favorite was successfully created.' }
+        format.html { redirect_to listing_path(@favorite.listing_id)}
         format.json { render :show, status: :created, location: @favorite }
       else
         format.html { render :new }
@@ -55,7 +55,7 @@ class FavoritesController < ApplicationController
   def destroy
     @favorite.destroy
     respond_to do |format|
-      format.html { redirect_to favorites_url, notice: 'Favorite was successfully destroyed.' }
+      format.html { redirect_to listing_path(@favorite.listing_id)}
       format.json { head :no_content }
     end
   end
