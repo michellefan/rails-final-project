@@ -15,8 +15,8 @@ class ListingsController < ApplicationController
   # GET /listings/1
   # GET /listings/1.json
   def show
-      listing = Listing.where(id=params[:id])
-      @listing = listing.first
+      listing = Listing.find(id=params[:id])
+      @listing = listing
       puts 'ID OF LISTING: '
        puts params[:id]
   end
