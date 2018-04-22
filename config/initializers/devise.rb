@@ -10,10 +10,6 @@ Devise.setup do |config|
   # by default. You can change it below and use your own secret key.
   config.secret_key = 'a5667004e1d52494d93417479c4bfaf767dd9e1e8cadc8cdef04c36ed7e5ece426c0f8f48a3a13c9be09ec99b55f72206a5dc845d3b6a710eefeeb95f91a981b'
 
-  # ==> Controller configuration
-  # Configure the parent class to the devise controllers.
-  # config.parent_controller = 'DeviseController'
-
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
@@ -114,13 +110,13 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '4229f064775ee2d9321a9465b73daad1e9766213c0800893b9a3d774b3f2c4aa78d04fecd803c9e7f407c2bd8bd5045d03038cc03b7e3f6d19e1d723dc7b2b09'
+  # config.pepper = '3757c7eff2348dbc4c6f99b0b9be91855642b8d770f2e6a766629f4e52a3974efd3ed7b970ef00304aef8fda972026bc8b06bb957877787a85f8bc6fa4590cdb'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
 
   # Send a notification email when the user's password is changed.
-  config.send_password_change_notification = true
+  # config.send_password_change_notification = false
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -128,7 +124,7 @@ Devise.setup do |config|
   # able to access the website for two days without confirming their account,
   # access will be blocked just in the third day. Default is 0.days, meaning
   # the user cannot access the website without confirming their account.
-  config.allow_unconfirmed_access_for = 2.days
+  # config.allow_unconfirmed_access_for = 2.days
 
   # A period that the user is allowed to confirm their account before their
   # token becomes invalid. For example, if set to 3.days, the user can confirm
