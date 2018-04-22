@@ -34,7 +34,7 @@
           <div id="map" style='width: 100%; height: 400px;'></div>
         </div>
 								<div>
-								
+
 									</div>
         <script type="text/javascript">
           handler = Gmaps.build('Google');
@@ -54,9 +54,12 @@
             handler.bounds.extendWith(markers);
             handler.fitMapToBounds();
           });
-									
+
         </script>
-									
+        <script>
+            markers = handler.addMarkers(<%=raw @hash.to_json %>);
+        </script>
+
         <!-- sidebar_container -->
         <div id="listings">
             <% @listings.each do |listing| %>
