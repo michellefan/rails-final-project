@@ -11,11 +11,18 @@
     <h3>Offered by: <%= User.find(listing.user_id).first_name %> </h3>
 
     <h3> <%= link_to "Show More", controller: "listings", action: "show", id: listing.id %>
-
+<<<<<<< HEAD
+    <button>FAV!</button>
+        <!--
+          <%# if Favorite.exists?(user_id: current_user.id, listing_id: listing.id) %>
+            <li>
+            <%# link_to "UNFAV!", action: "destroy", :method=>:delete, controller: "favorites" %>
+=======
           <% if Favorite.exists?(user_id: current_user.id, listing_id: listing.id)
             favorite = Favorite.where(user_id: current_user.id, listing_id: listing.id).first%>
             <li>
             <%= button_to 'UNFAV!', favorite, method: :delete%>
+>>>>>>> fcc5e6e184dee035762ec53e9c8b889dff981a20
             </li>
           <%# else %>
             <li>
