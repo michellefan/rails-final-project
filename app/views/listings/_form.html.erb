@@ -10,7 +10,35 @@
       </ul>
     </div>
   <% end %>
-
+  <% puts current_user %>
+  <div class="field">
+    <%= form.label :address %><br />
+    <%= form.text_field :address, autofocus: true, autocomplete: "address" %>
+  </div>
+  <div class="field">
+    <%= form.label :price %><br />
+    <%= form.text_field :price, autofocus: true %>
+  </div>
+  <div class="field">
+    <%= form.label :term %><br />
+    <%= select_tag(:term, options_for_select([["Spring", "spring"], ["Summer", "summer"], ["Fall", "fall"], ["Winter", "winter"]], 4)) %>
+  </div>
+  <div class="field">
+    <%= form.label :bedrooms %><br />
+    <%= form.text_field :bedrooms, autofocus: true %>
+  </div>
+  <div class="field">
+    <%= form.label :bathrooms %><br />
+    <%= form.text_field :bathrooms, autofocus: true %>
+  </div>
+  <div class="field">
+    <%= form.label :square_footage %><br />
+    <%= form.text_field :square_footage, autofocus: true %>
+  </div>
+  <div class="field">
+    Additional Information About Listing:<br />
+    <%= form.text_field :text, autofocus: true %>
+  </div>
   <div class="actions">
     <%= form.submit %>
   </div>
