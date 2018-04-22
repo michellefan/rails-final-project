@@ -7,11 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Make users
-%w(Michelle Adhiv Tina).each do |name|
-  User.create first_name: name, email: name+"@berkeley.edu", encrypted_password: 'password'
-end
+User.create!([{first_name: 'Michelle'}, {last_name: 'Copenhagen'}, {email: "michelle@berkeley.edu"}, {encrypted_password: "password"}])
+# %w(Michelle Adhiv Tina).each do |name|
+#   User.create! first_name: name, last_name: "cal bear", email: name+"@berkeley.edu", encrypted_password: 'password'
+# end
 
 #Make listings
-[['new york city, new york', "summer", 5000], ['berkeley, ca', "fall", 3000], ['los angeles, ca', "spring", 2000]].each do |address, term, price|
-  Listing.create address: address, term: term, price: price, text: 'yolo swag rent me pls'
-end
+Listing.create!([{address: 'new york city'}, {term: "summer"}, {price: 4000}, {text: "hi im available"}])
+# [['new york city, new york', "summer", 5000], ['berkeley, ca', "fall", 3000], ['los angeles, ca', "spring", 2000]].each do |address, term, price|
+#   Listing.create! address: address, term: term, price: price, text: 'yolo swag rent me pls'
+# end
