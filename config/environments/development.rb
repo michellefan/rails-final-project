@@ -51,9 +51,8 @@ Rails.application.configure do
 
   #code added from pokemon project for devise
   #ActionMailer Config
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
   # Send email in development mode?
   config.action_mailer.perform_deliveries = true
 
