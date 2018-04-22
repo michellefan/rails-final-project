@@ -12,6 +12,6 @@
 end
 
 #Make listings
-[['new york city, new york', 5000], ['berkeley, ca', 3000], ['los angeles, ca', 2000].each do |address, price|
-  Listing.create address: address, term: summer, price: price, text: 'yolo swag rent me pls'
+[['new york city, new york', "summer", 5000], ['berkeley, ca', "fall", 3000], ['los angeles, ca', "spring", 2000]].each do |address, term, price|
+  Listing.create address: address, term: term, price: price, text: 'yolo swag rent me pls'
 end

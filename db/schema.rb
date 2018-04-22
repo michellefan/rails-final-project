@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_21_203006) do
+ActiveRecord::Schema.define(version: 2018_04_22_173942) do
 
   create_table "amenities_lists", force: :cascade do |t|
     t.integer "listing_id"
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 2018_04_21_203006) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_listings_on_user_id"
   end
 
