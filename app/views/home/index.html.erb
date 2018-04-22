@@ -7,7 +7,7 @@
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Lora:400,700" rel="stylesheet">
         <link rel="stylesheet" href="homepage.css" type="text/css" media="screen">
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
         <header>
@@ -30,12 +30,10 @@
         <!--<div id="map" style='width: 800px;'>
           <div id="sidebar_builder" style='width: 800px; height: 400px;'></div>
         </div>-->
-        <div style='width: 100%;'>
+        <!-- <div style='width: 100%;'>
           <div id="map" style='width: 100%; height: 400px;'></div>
         </div>
-								<div>
 
-									</div>
         <script type="text/javascript">
           handler = Gmaps.build('Google');
           handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
@@ -55,14 +53,54 @@
             handler.fitMapToBounds();
           });
 
-        </script>
-        <script>
-            markers = handler.addMarkers(<%=raw @hash.to_json %>);
+        </script> -->
+        <div style='width: 100%;'>
+          <div id="map" style='width: 100%; height: 400px;'></div>
+        </div>
+        <div id='listings'>
+        </div>
+
+        <script type="text/javascript">
+          function createSidebarLi(json){
+            return ("<li><a>" + json.name + "</a></li>");
+          };
+
+          function bindLiToMarker($li, marker){
+            $li.on('click', function(){
+              handler.getMap().setZoom(14);
+              marker.setMap(handler.getMap()); //because clusterer removes map property from marker
+              marker.panTo();
+              google.maps.event.trigger(marker.getServiceObject(), 'click');
+            })
+          };
+
+          function createSidebar(json_array){
+            _.each(json_array, function(json){
+              var $li = $( createSidebarLi(json) );
+              $li.appendTo('#listings');
+              bindLiToMarker($li, json.marker);
+            });
+          };
+
+          handler = Gmaps.build('Google');
+          handler.buildMap({ internal: {id: 'map'}}, function(){
+            var json_array = <%=raw @hash.to_json %>;
+
+            var markers = handler.addMarkers(json_array);
+
+            _.each(json_array, function(json, index){
+              json.marker = markers[index];
+            });
+
+            createSidebar(json_array);
+            handler.bounds.extendWith(markers);
+            handler.fitMapToBounds();
+          });
         </script>
 
         <!-- sidebar_container -->
-        <div id="listings">
-            <% @listings.each do |listing| %>
+        <div id="sidebar_container">
+            <%= @listings.each do |listing| %>
               <tr>
                 <td><%= render listing do %> </td>
                   <% end %>
