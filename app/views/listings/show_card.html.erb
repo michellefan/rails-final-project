@@ -7,8 +7,7 @@
     <h3> <%= @listing.poster %> </h3>
     <h3> <%= @listing.bedrooms %> </h3>
     <h3> <%= @listing.bedrooms %> </h3>
-    <td> <%= link_to "Show More", controller: "listings", action: "show", id: @listing.id %>
-					<%= button_to "FAV!", controller: "favorites", action: "create", listing_id: @listing.id, user_id: current_user.id %>
-</td>
+    <h3> <%= link_to "Show More", controller: "listings", action: "show", id: @listing.id %>
+					<%= button_to "FAV!", controller: "favorites", action: "create", listing_id: @listing.id, user_id: current_user.id %></h3>
     
 </div>

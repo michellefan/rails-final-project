@@ -1,0 +1,22 @@
+<div id="listing">
+    <h1> <%= listing.address %> </h1>
+    <h3> <%= listing.price %> </h3>
+    <h3> <%= listing.term %> </h3>
+    <h3> <%= listing.bedrooms %> </h3>
+    <h3> <%= listing.bathrooms %> </h3>
+    <h3> <%= listing.user_id %> </h3>
+    <h3> <%= listing.square_footage %> </h3>
+    <h3> <%= link_to "Show More", controller: "listings", action: "show", id: listing.id %>
+<!--					<%# button_to "FAV!", controller: "favorites", action: "create", listing_id: listing.id, user_id: current_user.id %></h3>-->
+    
+</div>
+
+
+t.string "address"
+    t.integer "price"
+    t.string "term"
+    t.integer "bedrooms"
+    t.integer "bathrooms"
+    t.integer "square_footage"
+    t.text "text"
+    t.integer "user_id"

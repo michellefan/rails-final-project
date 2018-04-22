@@ -1,12 +1,16 @@
-<% @pokemons.each do | p | %>       
-  <tr>
-    <td><%= image_tag("pokemon/#{p.ndex}.png", alt: "pokemon") %></td>
-    <td><%= p.name %></td>  
-    <td><%= p.level %></td> 
-    <td><%= p.health %></td>
-    <td><%= button_to "Damage Pokemon", damage_path(id: p), :class => "button medium", :method => :patch %></td>
-  </tr>
-<% end %> 
+<div id="listing">
+    <h1> <%= @listing.address %> </h1>
+    <h3> <%= @listing.price %> </h3>
+    <h3> <%= @listing.term %> </h3>
+    <h3> <%= @listing.bedroom %> </h3>
+    <h3> <%= @listing.bathroom %> </h3>
+    <h3> <%= @listing.poster %> </h3>
+    <h3> <%= @listing.bedrooms %> </h3>
+    <h3> <%= @listing.bedrooms %> </h3>
+    <h3> <%= link_to "Show More", controller: "listings", action: "show", id: @listing.id %>
+					<%= button_to "FAV!", controller: "favorites", action: "create", listing_id: @listing.id, user_id: current_user.id %></h3>
+    
+</div>
 
 
 <p id="notice"><%= notice %></p>

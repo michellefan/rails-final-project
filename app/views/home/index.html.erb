@@ -21,10 +21,12 @@
         <!--<div id="map" style='width: 800px;'>
           <div id="sidebar_builder" style='width: 800px; height: 400px;'></div>
         </div>-->
-        <div style='width: 800px;'>
-          <div id="map" style='width: 800px; height: 400px;'></div>
+        <div style='width: 100%;'>
+          <div id="map" style='width: 100%; height: 400px;'></div>
         </div>
-
+								<div>
+								
+									</div>
         <script type="text/javascript">
           handler = Gmaps.build('Google');
           handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
@@ -43,11 +45,17 @@
             handler.bounds.extendWith(markers);
             handler.fitMapToBounds();
           });
+									
         </script>
-
+									
         <!-- sidebar_container -->
         <div id="listings">
-
+            <% @listings.each do |listing| %>
+              <tr>
+                <td><%= render listing do %> </td>
+                  <% end %>
+              </tr>
+            <% end %>
         </div>
 
         </section>

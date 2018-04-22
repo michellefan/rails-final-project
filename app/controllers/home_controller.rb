@@ -1,4 +1,10 @@
 class HomeController < ApplicationController
-  def show
-  end
+  
+    @listings = Listing.all
+    def show
+    end
+    
+    def index
+        @listings = Listing.all
+    end
 end
