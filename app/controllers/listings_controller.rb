@@ -70,9 +70,9 @@ class ListingsController < ApplicationController
     end
   end
 
-  def address
-    return Listing.find(params[:id]).address
-  end
+  #def address
+#    return Listing.find(params[:id]).address
+#  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

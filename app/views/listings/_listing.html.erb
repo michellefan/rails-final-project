@@ -1,3 +1,6 @@
+<head>
+  <%= javascript_include_tag "application" %>
+</head>
 <div id="listing">
     <h1> <%= listing.address %> </h1>
     <h3>Price: <%= listing.price %></h3>
@@ -8,11 +11,11 @@
     <h3>Offered by: <%= User.find(listing.user_id).first_name %> </h3>
 
     <h3> <%= link_to "Show More", controller: "listings", action: "show", id: listing.id %>
-    <button>FAV!</button>
-        <!--
-          <%# if Favorite.exists?(user_id: current_user.id, listing_id: listing.id) %>
+
+          <% if Favorite.exists?(user_id: current_user.id, listing_id: listing.id)
+            favorite = Favorite.where(user_id: current_user.id, listing_id: listing.id).first%>
             <li>
-            <%# link_to "UNFAV!", action: "destroy", :method=>:delete, controller: "favorites" %>
+            <%= button_to 'UNFAV!', favorite, method: :delete%>
             </li>
           <%# else %>
             <li>
