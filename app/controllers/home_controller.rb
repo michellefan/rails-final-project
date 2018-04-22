@@ -1,5 +1,4 @@
 class HomeController < ApplicationController
-
     @listings = Listing.all
     def show
     end
