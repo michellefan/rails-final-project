@@ -4,11 +4,10 @@
     <h3> <%= @listing.term %> </h3>
     <h3> <%= @listing.bedrooms %> </h3>
     <h3> <%= @listing.bathrooms %> </h3>
-    <h3> <%= @listing.user_id %> </h3>
-    <h3> <%= @listing.square_footage %> </h3>
-<h3> <%= link_to "Show More", controller: "listings", action: "show", id: @listing.id %></h3>
-					<%# button_to "FAV!", controller: "favorites", action: "create", listing_id: @listing.id, user_id: current_user.id %>
-    
+
+    <h3> <%= @listing.user %> </h3>
+    <h3> <%= link_to "Show More", controller: "listings", action: "show", id: @listing.id %>
+					<%# button_to "FAV!", controller: "favorites", action: "create", listing_id: @listing.id, user_id: current_user.id %></h3>
 </div>
 
 
