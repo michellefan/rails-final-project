@@ -11,7 +11,14 @@
   User.create first_name: name, email: name+"@berkeley.edu", encrypted_password: 'password'
 end
 
+User.create(first_name: 'Michelle', email: "tina@berkeley.edu", encrypted_password: 'password')
+User.create(first_name: 'Tina', email: "michelle@berkeley.edu", encrypted_password: 'password')
+
 #Make listings
-[['new york city, new york', "summer", 5000], ['berkeley, ca', "fall", 3000], ['los angeles, ca', "spring", 2000]].each do |address, term, price|
-  Listing.create address: address, term: term, price: price, text: 'yolo swag rent me pls'
+[
+    ['new york city, new york', "Summer 2018", 5000, 4, 2, 1100, 1], 
+    ['berkeley, ca', "Fall 2018", 3000, 3,1,800, 2], 
+    ['los angeles, ca', "Spring 2018", 2000, 2,1,700, 1]
+    ].each do |address, term, price, bedrooms, bathrooms, square_footage, user_id|
+  Listing.create(address: address, term: term, price: price, text: 'yolo swag rent me pls', bedrooms: bedrooms, bathrooms: bathrooms, square_footage: square_footage, user_id: user_id)
 end
