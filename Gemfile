@@ -29,8 +29,10 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-gem 'bcrypt', platforms: :ruby
-
+#gem 'bcrypt-ruby', '3.1.5', :require => 'bcrypt'
+#gem 'bcrypt', '~> 3.1.11', platforms: [:ruby, :x64_mingw, :mingw]
+#gem 'bcrypt-ruby', '3.1.5', :require => 'bcrypt'
+gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 gem 'devise'
 
 # Use ActiveStorage variant
