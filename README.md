@@ -34,4 +34,4 @@ Michelle:
 
 Adhiv: 
 
-Tina: implemented functionalities with the geocoder gem and the google maps gem, made seed file, writeup
+Tina: implemented functionalities with the google maps gem and geocoder gem, made seed file, writeup
