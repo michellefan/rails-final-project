@@ -8,7 +8,6 @@
 
 **Idea:** An application where students can find and post semester sublet housing listings and can also favorite posted listings shown on the map, view details, and contact the poster.
 
-
 **Models and Description:**
 ###### User
 * Each user has a first name, last name, email, and password
