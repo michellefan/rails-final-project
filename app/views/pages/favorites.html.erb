@@ -1,0 +1,10 @@
+<h3>My Favorite Listings</h3>
+<tbody>
+</br>
+  <% Favorite.where(user_id: @user.id).each do |favorite| %>
+    <tr>
+      <% listing = Listing.find(favorite.listing_id)%>
+      <td><%= render listing%> </td>
+    </tr>
+  <% end %>
+</tbody>
