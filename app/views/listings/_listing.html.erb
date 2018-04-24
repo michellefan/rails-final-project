@@ -1,6 +1,3 @@
-<head>
-  <%= javascript_include_tag "application" %>
-</head>
 <div id="listing">
     <h1> <%= listing.address %> </h1>
     <h3>Price: <%= listing.price %></h3>
@@ -8,25 +5,16 @@
     <h3>Bedrooms: <%= listing.bedrooms %></h3>
     <h3>Bathrooms: <%= listing.bathrooms %></h3>
     <h3>Square Footage: <%= listing.square_footage %> </h3>
-    <!-- <h3>Offered by: <%% User.find(listing.user_id).first_name %> </h3> -->
 
     <h3> <%= link_to "Show More", controller: "listings", action: "show", id: listing.id %>
-<<<<<<< HEAD
-    <button>FAV!</button>
-        <!--
-          <%# if Favorite.exists?(user_id: current_user.id, listing_id: listing.id) %>
-            <li>
-            <%# link_to "UNFAV!", action: "destroy", :method=>:delete, controller: "favorites" %>
-=======
           <% if Favorite.exists?(user_id: current_user.id, listing_id: listing.id)
             favorite = Favorite.where(user_id: current_user.id, listing_id: listing.id).first%>
             <li>
             <%= button_to 'UNFAV!', favorite, method: :delete%>
->>>>>>> fcc5e6e184dee035762ec53e9c8b889dff981a20
             </li>
           <% else %>
             <li>
-            <% button_to "FAV!", action: "create", controller: "favorites", favorite: {listing_id: listing.id, user_id: current_user.id} %>
+            <%= button_to "FAV!", action: "create", controller: "favorites", favorite: {listing_id: listing.id, user_id: current_user.id} %>
             </li>
           <% end %>
     </h3>

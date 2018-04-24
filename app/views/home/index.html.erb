@@ -8,6 +8,9 @@
         <link href="https://fonts.googleapis.com/css?family=Lora:400,700" rel="stylesheet">
         <link rel="stylesheet" href="homepage.css" type="text/css" media="screen">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+      <%= javascript_include_tag "application" %>
+
     </head>
     <body>
         <header>
@@ -64,6 +67,10 @@
           function createSidebarLi(json){
             return ("<li><a>" + json.name + "</a></li>");
           };
+            
+          function createSidebarLi2(json){
+            return ("<li><a>" + json.name + "</a></li>");
+          };
 
           function bindLiToMarker($li, marker){
             $li.on('click', function(){
@@ -77,7 +84,7 @@
           function createSidebar(json_array){
             _.each(json_array, function(json){
               var $li = $( createSidebarLi(json) );
-              $li.appendTo('#listings');
+              $li.appendTo('#sidebar_container');
               bindLiToMarker($li, json.marker);
             });
           };
@@ -99,7 +106,8 @@
         </script>
 
         <!-- sidebar_container -->
-        <div id="sidebar_container">
+        <div id="sidebar_container"></div>
+        <div id="listings">
             <%= @listings.each do |listing| %>
               <tr>
                 <td><%= render listing do %> </td>
