@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'favorites', to: "pages#favorites"
+  get 'listings', to: "pages#my_listings"
   devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions' }
   resources :users
   resources :listings
