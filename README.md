@@ -1,5 +1,5 @@
 # Rails Decal Final Project
-
+------
 **Title:** Hibernate
 
 **Team Members:** Michelle Fan, Adhiv Dhar, Tina Ye
@@ -39,3 +39,4 @@ Michelle:
 Adhiv: 
 
 Tina: implemented functionalities with the google maps gem and geocoder gem, made seed file, writeup
+------
