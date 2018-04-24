@@ -30,6 +30,8 @@
 * Users can add listings to their favorites
 
 #### Division of Labor:
-Michelle: 
+Michelle:
+
 Adhiv: 
+
 Tina: implemented functionalities with the geocoder gem and the google maps gem, made seed file, writeup
