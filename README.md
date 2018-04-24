@@ -7,8 +7,7 @@
 **Demo Link:**
 
 **Idea:** An application where students can find and post semester sublet housing listings and can also favorite posted listings shown on the map, view details, and contact the poster.
-&nbsp;
-&nbsp;
+________
 
 **Models and Description:**
 ###### User
