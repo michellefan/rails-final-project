@@ -12,12 +12,12 @@
     <h3>Posted by: <%= user.first_name+" "+ user.last_name%> </h3>
     <h3>Email: <% user.email %> </h3>
 
-    <% if Favorite.exists?(user_id: current_user.id, listing_id: listing.id)
-       favorite = Favorite.where(user_id: current_user.id, listing_id: listing.id).first%>
-       <%= button_to 'UNFAV!', favorite, method: :delete%>
-     <% else %>
-       <%= button_to "FAV!", action: "create", controller: "favorites", favorite: {listing_id: listing.id, user_id: current_user.id} %>
-     <% end %>
+   <% if Favorite.exists?(user_id: current_user.id, listing_id: listing.id)
+         favorite = Favorite.where(user_id: current_user.id, listing_id: listing.id).first%>
+         <%= button_to '💔 Unfavorite', favorite, method: :delete%>
+       <% else %>
+         <%= button_to "❤️ Favorite", action: "create", controller: "favorites", favorite: {listing_id: listing.id, user_id: current_user.id} %>
+       <% end %>
  </h3>
 </div>
 
