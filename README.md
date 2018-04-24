@@ -1,10 +1,10 @@
 # Rails Decal Final Project
 
-#### **Title:** Hibernate
-#### **Team Members:** Michelle Fan, Adhiv Dhar, Tina Ye
-#### **Demo Link:**
+**Title:** Hibernate
+**Team Members:** Michelle Fan, Adhiv Dhar, Tina Ye
+**Demo Link:**
 
-#### **Idea:** An application where students can find and post semester sublet housing listings and can also favorite posted listings shown on the map, view details, and contact the poster.
+**Idea:** An application where students can find and post semester sublet housing listings and can also favorite posted listings shown on the map, view details, and contact the poster.
 
 
 #### **Models and Description:**
