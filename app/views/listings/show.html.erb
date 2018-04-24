@@ -1,10 +1,29 @@
-<div>
+<div id="listing">
+    <% listing = @listing %>
+    <h1> <%= listing.address %> </h1>
+    <h3>Price: <%= listing.price %></h3>
+    <h3>Term: <%= listing.term %> </h3>
+    <h3>Bedrooms: <%= listing.bedrooms %></h3>
+    <h3>Bathrooms: <%= listing.bathrooms %></h3>
+    <h3>Square Footage: <%= listing.square_footage %> </h3>
+    <h3>Additional Information: <%= listing.text %> </h3>
+    <br/>
+    <%user = User.find(listing.user_id)%>
+    <h3>Posted by: <%= user.first_name+" "+ user.last_name%> </h3>
+    <h3>Email: <% user.email %> </h3>
 
-<%= render 'listing', listing: @listing %>
+    <% if Favorite.exists?(user_id: current_user.id, listing_id: listing.id)
+       favorite = Favorite.where(user_id: current_user.id, listing_id: listing.id).first%>
+       <%= button_to 'UNFAV!', favorite, method: :delete%>
+     <% else %>
+       <%= button_to "FAV!", action: "create", controller: "favorites", favorite: {listing_id: listing.id, user_id: current_user.id} %>
+     <% end %>
+ </h3>
 </div>
 
 
 <p id="notice"><%= notice %></p>
-
+<% if @listing.user_id == current_user.id %>
 <%= link_to 'Edit', edit_listing_path(@listing) %> |
-<%= link_to 'Back', listings_path %>
+ <% end %>
+<%= link_to 'My Listings', listings_path %>
