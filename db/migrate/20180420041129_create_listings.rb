@@ -8,7 +8,8 @@ class CreateListings < ActiveRecord::Migration[5.2]
       t.integer :bathrooms
       t.integer :square_footage
       t.text :text
-      t.references :user, foreign_key: true
+      t.references :user
+      # t.references :user, foreign_key: true
 
       t.timestamps
     end

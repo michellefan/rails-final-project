@@ -7,18 +7,24 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Make users
-#%w(Michelle Adhiv Tina).each do |name|
-#  User.create first_name: name, email: name+"@berkeley.edu", encrypted_password: 'password'
-#end
-#
-#User.create(first_name: 'Michelle', email: "tina@berkeley.edu", encrypted_password: 'password')
-#User.create(first_name: 'Tina', email: "michelle@berkeley.edu", encrypted_password: 'password')
+[
+    ['Michelle', 'Fan', "michelle@berkeley.edu", 'michellepassword'],
+    ['Adhiv', 'Dhar', "adhiv@berkeley.edu", 'adhivpassword'],
+    ['Tina', 'Ye', "tina@berkeley.edu", 'tinapassword'],
+    ['Oski', 'Bear', "oskiwowwow@berkeley.edu", 'oskipassword'],
+    ['Chancellor', 'Christ', "chancellor@berkeley.edu", 'chancellorpassword']
+  ].each do |first_name, last_name, email, password|
+  User.create(first_name: first_name, last_name: last_name, email: email, password: password, sign_in_count: 1, created_at: DateTime.now - (rand * 21), updated_at: DateTime.now - (rand * 21), current_sign_in_at: DateTime.now - (rand * 21), last_sign_in_at: DateTime.now - (rand * 21)).save!(validate: false)
+end
 
 #Make listings
 [
-    ['new york city, new york', "Summer 2018", 5000, 4, 2, 1100, 1], 
-    ['berkeley, ca', "Fall 2018", 3000, 3,1,800, 2], 
-    ['los angeles, ca', "Spring 2018", 2000, 2,1,700, 1]
-    ].each do |address, term, price, bedrooms, bathrooms, square_footage, user_id|
-  Listing.create(address: address, term: term, price: price, text: 'yolo swag rent me pls', bedrooms: bedrooms, bathrooms: bathrooms, square_footage: square_footage, user_id: user_id)
+    ['1214 5th Ave, New York, NY 10029', 'Summer 2018', 5500, 4, 2, 2800, "I have the best apartment ever! It's on Fifth Avenue, Upper East Side and literally right above Central Park near all of the nice museums. Panaromaic views of the park, city, and river!", 1],
+    ['2510 Bancroft Way, Berkeley, CA 94704', 'Fall 2018', 2800, 3, 1, 800, "wassup my dudes i am studying abroad in the fall please sublet a spot in my janky cardboard box apartment", 4],
+    ['255 King St, San Francisco, CA 94107', 'Spring 2019', 3900, 2, 1, 1100, "2 spots available! Avalon at Mission Bay is home to excellent San Francisco apartments with stunning features and amenities. You'll be living with my two roommates who intern at Apple.", 3],
+    ['1120 W 6th St, Los Angeles, CA 90017', 'Summer 2018', 2500, 1, 1, 1800, "Do you wanna be hip 'n cool? Sublet my apartment! It's in Downtown LA and super close to USC, with views of the city and a short walk to the Financial District, Staples Center, LA Live, and Walt Disney Concert Hall.", 2],
+    ['1910 Oxford Street Berkeley CA 94704', 'Summer 2018', 3100, 2, 2, 900, "Looking for one male student to take my spot in the summer! My apartment is in Downtown Berkeley and it's located right above Yali's Cafe! It's super close to campus and right next to Li Ka Shing. Please contact me if you would like to sublet from me!", 2],
+    ['University House, Berkeley, CA 94709', 'Summer 2018', 0, 10, 10, 20000, "I'm not even living here so...", 5]
+  ].each do |address, term, price, bedrooms, bathrooms, square_footage, text, user_id|
+  Listing.create(address: address, term: term, price: price, bedrooms: bedrooms, bathrooms: bathrooms, square_footage: square_footage, text: text, user_id: user_id)
 end
