@@ -36,8 +36,8 @@
   
 **Division of Labor:**
 
-Michelle:
+Michelle: Devise setup for the different forms, favorites list setup, models
 
-Adhiv: 
+Adhiv: Views, front-end aesthetics stuff, setting up listings & routes, controller methods
 
-Tina: implemented functionalities with the google maps gem and geocoder gem, made seed file, writeup
+Tina: google maps gem (get map to show on page and listings to show on map, sidebar click-to-locate housing on map) and geocoder gem (calculate latitude & longitude from address), seed file, writeup
