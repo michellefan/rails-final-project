@@ -12,7 +12,7 @@
 **Models and Description:**
 ###### User
 * Each user has a first name, last name, email, and password
-* Users can have many posted listings and favorited listings
+* Users can have many posted listings and many favorited listings
 * Users can be both posters and renters
 
 ###### Favorite
