@@ -1,10 +1,14 @@
-<h3>My Favorite Listings</h3>
-<tbody>
-</br>
-  <% Favorite.where(user_id: @user.id).each do |favorite| %>
-    <tr>
-      <% listing = Listing.find(favorite.listing_id)%>
-      <td><%= render listing%> </td>
-    </tr>
+<%= render "home/header" %>
+<section id="section2">
+    <% if Favorite.exists?(user_id: @user.id) %>
+        <h3>My Favorite Listings</h3>
+        <% Favorite.where(user_id: @user.id).each do |favorite| %>
+        <tr>
+          <% listing = Listing.find(favorite.listing_id)%>
+          <td><%= render listing%> </td>
+        </tr>
+        <% end %>
+    <% else %>
+        <p id="message">😢🚫🏠<br>You have no favorite listings! Visit <%= link_to('Home', root_path) %> to find a listing you love ❤️</p>
   <% end %>
-</tbody>
+</section>

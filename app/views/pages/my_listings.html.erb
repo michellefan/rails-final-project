@@ -1,9 +1,20 @@
-<h3>My Listings</h3>
-<tbody>
-</br>
-  <% Listing.where(user_id: @user.id).each do |listing| %>
-    <tr>
-      <td><%= render listing%> </td>
-    </tr>
-  <% end %>
-</tbody>
+<%= render "home/header" %>
+<section id="section2">
+    <% if Listing.exists?(user_id: @user.id) %>
+            <h3>My Listings</h3>
+          <% Listing.where(user_id: @user.id).each do |listing| %>
+            <tr>
+              <td><%= render listing%> </td>
+            </tr>
+            <% end %>
+    <% else %>
+        <p id="message">🤔🚫📮<br>You haven't posted any listings yet!<br><%= link_to('Post a Listing', controller: "listings", action: "new") %></p>
+    <% end %>
+    
+    <p id="notice"><%= notice %></p>
+
+
+    
+    
+
+</section>

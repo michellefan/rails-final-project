@@ -5,5 +5,6 @@ class PagesController < ApplicationController
 
   def my_listings
     @user = current_user
+    @listings = Listing.all
   end
 end

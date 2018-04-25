@@ -3,24 +3,56 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
 
+
 body
 {
     font-family: 'Open Sans', sans-serif;
     background-color:#f3f3f3;
     padding: 0;
+    margin: 0;
+    position: relative;
+    bottom: 16px;
 }
 
 header {
-    background-color: aliceblue;
+    background-color: #3594e8;
+    border-bottom: 5px solid #2182d8;
     width: 100%;
+    margin-bottom: 10px;
 }
 header h1 {
     font-weight: 300;
     display: inline-block;
+    color: white;
+}
+
+header ul {
+    float: right;
 }
 
 header li {
-    float:right;
+    list-style-type: none;
+    display: inline-block;
+    background-color: none;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 14px;
+    letter-spacing: 5px;
+    margin: 0 10px;
+    padding: 9px;
+    border-radius: 5px;
+
+}
+
+header li:hover {
+    background-color: #45a1f4;
+    cursor: pointer;
+}
+
+header li a {
+    text-decoration: none;
+    color: white;
 }
 
 section {
@@ -28,9 +60,48 @@ section {
     max-width: 70em;
 }
 
+#section2 {
+    background-color: white;
+    border-radius: 8px;
+    height: 100%;
+    padding: 20px 40px;
+}
+
 #map {
     background-color: green;
     margin: 0 auto;
+}
+
+#contact {
+    background-color: #f0f0f0;
+    padding: 10px;
+}
+
+#dollar {
+    position: absolute;
+    color: #b7b7b7;
+    top: 15px;
+    left: -18px;
+}
+
+#sqft {
+    position: absolute;
+    color: #b7b7b7;
+    top: 15px;
+    right: 19px;
+}
+
+#message {
+    font-size: 40px;
+    font-weight: 100;
+    margin: 30px auto;
+    width: 700px;
+    text-align: center;
+}
+
+#message a{
+    text-decoration: none;
+    color: #3594e8;
 }
 
 #listings {
@@ -46,6 +117,7 @@ section {
     border: 1px solid #999999;
     border-radius: 5px;
     padding: 15px;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.20);
 }
 
 #listing h1 {
@@ -72,17 +144,18 @@ section {
 
 #listing a {
     text-decoration: none;
-    background-color: #1c9add;
+    background-color: #3594e8;
+    border-bottom: 3px solid #2182d8;
     color: white;
-    padding: 10px 10px;
+    padding: 12px 12px;
     font-weight: 400;
     font-size: 16px;
     border-radius: 5px;
-    transition: all 0.3s ease;
+    transition: all 0.3s;
 }
 
 #listing a:hover {
-    background-color: #0a8ace
+    background-color: #2182d8;
 }
 
 #listing h4 {

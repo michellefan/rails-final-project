@@ -47,14 +47,12 @@
         <div style='width: 100%;'>
           <div id="map" style='width: 100%; height: 400px;'></div>
         </div>
+            
+            <p>Click to locate me!</p>
 
         <script type="text/javascript">
           function createSidebarLi(json){
-            return ("<li><a>" + json.name + "</a></li>");
-          };
-            
-          function createSidebarLi2(json){
-            return ("<li><a>" + json.name + "</a></li>");
+            return ("<li class=\"add\"><a>" + json.name + "</a></li>");
           };
 
           function bindLiToMarker($li, marker){
@@ -93,7 +91,7 @@
         <!-- sidebar_container -->
         <div id="sidebar_container"></div>
         <div id="listings">
-            <%= @listings.each do |listing| %>
+            <% @listings.each do |listing| %>
               <tr>
                 <td><%= render listing%> </td>
               </tr>

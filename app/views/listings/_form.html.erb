@@ -1,4 +1,4 @@
-<%= form_with(model: listing, local: true) do |form| %>
+<%= form_with(model: listing, local: true, id: "createlisting")  do |form| %>
   <% if listing.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
@@ -11,33 +11,31 @@
     </div>
   <% end %>
   <% puts current_user %>
+    <h1>Create a new listing</h1>
   <div class="field">
-    <%= form.label :address %><br />
-    <%= form.text_field :address, autofocus: true, autocomplete: "address" %>
+    <%= form.text_field :address, autofocus: true, autocomplete: "address", class: 'fancy-input', placeholder: 'Address' %>
+  </div>
+  <div class="field" style="position:relative;">
+      <span id="dollar">$</span>
+    <%= form.text_field :price, autofocus: true, class: 'fancy-input', placeholder: 'Price per month' %>
   </div>
   <div class="field">
-    <%= form.label :price %><br />
-    <%= form.text_field :price, autofocus: true %>
+      <p style="">Term</p>
+    <%= select_tag(:term, options_for_select([ ["Summer 2018", "summer 2018"], ["Fall 2018", "fall 2018"], ["Spring 2019", "spring 2019"]], 3)) %>
   </div>
   <div class="field">
-    <%= form.label :term %><br />
-    <%= select_tag(:term, options_for_select([["Spring", "spring"], ["Summer", "summer"], ["Fall", "fall"], ["Winter", "winter"]], 4)) %>
+    <%= form.text_field :bedrooms, autofocus: true, class: 'fancy-input', placeholder: '# Bedrooms' %>
   </div>
   <div class="field">
-    <%= form.label :bedrooms %><br />
-    <%= form.text_field :bedrooms, autofocus: true %>
+    <%= form.text_field :bathrooms, autofocus: true, class: 'fancy-input', placeholder: '# Bathrooms' %>
+  </div>
+  <div class="field" style="position:relative;">
+    <%= form.text_field :square_footage, autofocus: true, class: 'fancy-input', placeholder: 'Square Footage' %>
+  <span id="sqft">sq ft</span>
+
   </div>
   <div class="field">
-    <%= form.label :bathrooms %><br />
-    <%= form.text_field :bathrooms, autofocus: true %>
-  </div>
-  <div class="field">
-    <%= form.label :square_footage %><br />
-    <%= form.text_field :square_footage, autofocus: true %>
-  </div>
-  <div class="field">
-    Additional Information About Listing:<br />
-    <%= form.text_field :text, autofocus: true %>
+    <%= form.text_area :text, autofocus: true, class: 'fancy-input description', placeholder: 'Description' %>
   </div>
   <div class="actions">
     <%= form.submit %>
