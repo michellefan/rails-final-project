@@ -14,6 +14,29 @@
  *= require_self
  */
 
+.new_user {
+    color: #333;
+    text-align: center;
+    padding: 40px;
+    width: 300px;
+    margin: 5% auto;
+    border-radius: 15px;
+    box-shadow: 0px 7px 20px 0px rgba(0,0,0,0.08);
+    transition: all 0.5s ease;
+    background-color: white;
+}
+
+.new_user h1 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.new_user p {
+    color: #808080;
+    float: left;
+    }
+
+
 #createlisting {
     color: #333;
     text-align: center;

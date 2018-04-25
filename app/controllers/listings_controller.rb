@@ -38,6 +38,10 @@ class ListingsController < ApplicationController
     @listing.user.listings += [@listing]
     respond_to do |format|
       if @listing.save
+          puts 'TERM'
+          puts @listing.term
+          puts 'SQ FOOT'
+          puts @listing.square_footage
         format.html { redirect_to @listing, notice: 'Listing was successfully created.' }
         format.json { render :show, status: :created, location: @listing }
       else
@@ -83,6 +87,6 @@ class ListingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
-      params.require(:listing).permit(:address, :term, :price, :bedrooms, :bathrooms, :text)
+      params.require(:listing).permit(:address, :term, :price, :bedrooms, :bathrooms, :text, :square_footage)
     end
 end

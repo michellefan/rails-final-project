@@ -22,5 +22,9 @@
     <h4> <% if listing.user_id == current_user.id %>
 <%= link_to 'Edit', edit_listing_path(listing) %>
  <% end %></h4>
+        <h4 id="destroy"> <% if listing.user_id == current_user.id %>
+        <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %>
+ <% end %></h4>
+
       
 </div>

@@ -1,14 +1,26 @@
+<header>
+    <section>
+    <h1>Hibernate</h1>
+        
+        </section>
+</header>
+<section style="text-align:center;">
+    
+    <img style="height: 200px; border-radius: 15px" src="https://static1.squarespace.com/static/5330a423e4b07cae635bb95e/t/57d1b1b429687f5d12c77f5a/1473360393551/Oski+the+Bear%3B+Photo+Credit%3A+Oski+Bear%21+Pinterest+Page?format=1500w">
+<h2 style="font-weight:100;">Sublet your den to your fellow bears in a safe and trusted platform!</h2>
+    
+    
 <h2>Log in</h2>
+    
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), id: "createlisting") do |f| %>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'fancy-input', placeholder: 'Email' %>
   </div>
 
   <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off", class: 'fancy-input', placeholder: 'Password' %>
   </div>
 
   <% if devise_mapping.rememberable? -%>
@@ -21,6 +33,9 @@
   <div class="actions">
     <%= f.submit "Log in" %>
   </div>
+    
+    <%= render "users/shared/links" %>
+
 <% end %>
 
-<%= render "users/shared/links" %>
+    </section>
