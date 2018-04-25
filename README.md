@@ -4,7 +4,7 @@
 
 **Team Members:** Michelle Fan, Adhiv Dhar, Tina Ye
 
-**Demo Link:**
+**Demo Link:** https://www.useloom.com/share/1e7efd235d1448bda72593f795d32ae8
 
 **Idea:** An application where students can find and post semester sublet housing listings and can also favorite posted listings shown on the map, view details, and contact the poster.  
   
