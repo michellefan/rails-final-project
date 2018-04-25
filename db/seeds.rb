@@ -20,11 +20,11 @@ end
 #Make listings
 [
     ['1214 5th Ave, New York, NY 10029', 'Summer 2018', 5500, 4, 2, 2800, "I have the best apartment ever! It's on Fifth Avenue, Upper East Side and literally right above Central Park near all of the nice museums. Panaromaic views of the park, city, and river!", 1],
-    ['2510 Bancroft Way, Berkeley, CA 94704', 'Fall 2018', 2800, 3, 1, 800, "wassup my dudes i am studying abroad in the fall please sublet a spot in my cardboard box apartment", 4],
+    ['2510 Bancroft Way, Berkeley, CA 94704', 'Fall 2018', 2800, 3, 1, 800, "wassup my dudes i am studying abroad in the fall please sublet a spot in my janky cardboard box apartment", 4],
     ['255 King St, San Francisco, CA 94107', 'Spring 2019', 3900, 2, 1, 1100, "2 spots available! Avalon at Mission Bay is home to excellent San Francisco apartments with stunning features and amenities. You'll be living with my two roommates who intern at Apple.", 3],
     ['1120 W 6th St, Los Angeles, CA 90017', 'Summer 2018', 2500, 1, 1, 1800, "Do you wanna be hip 'n cool? Sublet my apartment! It's in Downtown LA and super close to USC, with views of the city and a short walk to the Financial District, Staples Center, LA Live, and Walt Disney Concert Hall.", 2],
     ['1910 Oxford Street Berkeley CA 94704', 'Summer 2018', 3100, 2, 2, 900, "Looking for one male student to take my spot in the summer! My apartment is in Downtown Berkeley and it's located right above Yali's Cafe! It's super close to campus and right next to Li Ka Shing. Please contact me if you would like to sublet from me!", 2],
-    ['University House, Berkeley, CA 94709', 'Summer 2018', 0, 10, 10, 20000, "I'm not even living here so..", 5]
+    ['University House, Berkeley, CA 94709', 'Summer 2018', 0, 10, 10, 20000, "I'm not even living here so...", 5]
   ].each do |address, term, price, bedrooms, bathrooms, square_footage, text, user_id|
   Listing.create(address: address, term: term, price: price, bedrooms: bedrooms, bathrooms: bathrooms, square_footage: square_footage, text: text, user_id: user_id)
 end
