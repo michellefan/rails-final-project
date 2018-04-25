@@ -30,6 +30,7 @@
 * Users can click on a listing to view the listing’s full details on a new page
 * Users can contact the listing’s poster via email
 * Users can make a post for a new listing
+* Users can edit listings they've already created
 * Users can add listings to their favorites  
   
   
